@@ -1,0 +1,18 @@
+; Copy this file to config.ini, and customise it to your needs.
+; There should be one section per hostname you want to update:
+; - Profile: The profile name for the AWS credentials you want to use.
+;            See https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+; - HostedZoneID: The ID for the hosted zone containing the A record you
+;                 want to update. You can find this in Route 53 > Hosted Zones.
+; - TTL: The TTL for the A record, in seconds. Ideally, this shouldn't exceed the
+;        number of seconds between executions of the update script.
+
+[one.example.org]
+Profile = aws-profile-name
+HostedZoneID = Z1234567890
+TTL = 60
+
+[two.example.org]
+Profile = default
+HostedZoneID = Z1234567891
+TTL = 300

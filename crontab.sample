@@ -1,0 +1,7 @@
+# The snippet assumes you cloned the repository to ~/aws-ddns
+# and runs the script every 5 minutes. Customise it as needed,
+# and add this to your crontab. To do this you can use:
+#   $ crontab -e
+
+DDNS=$HOME/aws-ddns
+*/5 * * * *    $DDNS/.venv/bin/python $DDNS/update.py >> $DDNS/output.log 2>&1
